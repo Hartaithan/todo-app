@@ -5,7 +5,7 @@ import { global } from '../styles/global';
 import { colors } from '../constants/colors';
 
 const Header = () => {
-  const { todos } = useTypedSelector(state => state.todos);
+  const { todos } = useTypedSelector(state => state.todo);
   return (
     <View style={styles.header}>
       {todos.length === 0 && (
@@ -18,12 +18,13 @@ const Header = () => {
   );
 };
 
-export default Header;
-
 const styles = StyleSheet.create({
   header: {
     paddingBottom: 10,
+    marginBottom: 10,
     borderBottomWidth: 1,
     borderBottomColor: colors.gray[100],
   },
 });
+
+export default Header;
