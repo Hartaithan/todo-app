@@ -1,20 +1,22 @@
 import React from 'react';
-import { SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
+import Header from './components/Header';
+import { colors } from './constants/colors';
 
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar />
-      <View>
-        <Text>Hello world!</Text>
-      </View>
+      <Header />
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    padding: 24,
+    flex: 1,
+    padding: 12,
+    backgroundColor: colors.gray[0],
   },
 });
 
