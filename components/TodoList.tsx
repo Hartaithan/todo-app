@@ -1,14 +1,15 @@
 import React from 'react';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, Text } from 'react-native';
 import useTypedSelector from '../hooks/useTypedSelector';
 import TodoItem from './TodoItem';
 import { global } from '../styles/global';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 const TodoList = () => {
   const { todos } = useTypedSelector(state => state.todo);
 
   return (
-    <View style={styles.list}>
+    <GestureHandlerRootView style={styles.list}>
       <FlatList
         data={todos}
         renderItem={({ item }) => <TodoItem item={item} />}
@@ -18,7 +19,7 @@ const TodoList = () => {
           <Text style={global.text}>Todos have not yet been added</Text>
         }
       />
-    </View>
+    </GestureHandlerRootView>
   );
 };
 
