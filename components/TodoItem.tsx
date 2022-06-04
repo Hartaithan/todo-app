@@ -16,7 +16,10 @@ const TodoItem = ({ item }: ITodoItemProps) => {
   return (
     <View style={styles.item}>
       <CheckBox value={item.complete} onValueChange={() => handleChange()} />
-      <Text style={[global.text, styles.title]}>{item.title}</Text>
+      <Text
+        style={[global.text, styles.title, item.complete && styles.checked]}>
+        {item.title}
+      </Text>
     </View>
   );
 };
@@ -35,6 +38,7 @@ const styles = StyleSheet.create({
     color: colors.gray[100],
     marginLeft: 8,
   },
+  checked: { textDecorationLine: 'line-through', textDecorationStyle: 'solid' },
 });
 
 export default TodoItem;
