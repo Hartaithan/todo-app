@@ -6,23 +6,7 @@ import {
 } from '../../models/todoModel';
 
 const initialState: ITodoState = {
-  todos: [
-    {
-      id: 1,
-      title: 'todo',
-      complete: false,
-    },
-    {
-      id: 2,
-      title: 'todo 2',
-      complete: true,
-    },
-    {
-      id: 3,
-      title: 'todo 3',
-      complete: false,
-    },
-  ],
+  todos: [],
 };
 
 const todoReducer = (state = initialState, action: TodoAction): ITodoState => {

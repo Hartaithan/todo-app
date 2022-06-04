@@ -24,7 +24,9 @@ const TodoList = () => {
 };
 
 const styles = StyleSheet.create({
-  list: {},
+  list: {
+    flex: 1,
+  },
 });
 
 export default TodoList;
