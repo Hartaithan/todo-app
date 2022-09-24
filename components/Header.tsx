@@ -9,10 +9,10 @@ const Header = () => {
   return (
     <View style={styles.header}>
       {todos.length === 0 && (
-        <Text style={global.text}>Hello, u don't have any tasks 😒</Text>
+        <Text style={[global.text]}>Hello, u don't have any tasks 😒</Text>
       )}
       {todos.length > 0 && (
-        <Text style={global.text}>Hello, u have {todos.length} tasks 🙂</Text>
+        <Text style={[global.text]}>Hello, u have {todos.length} tasks 🙂</Text>
       )}
     </View>
   );

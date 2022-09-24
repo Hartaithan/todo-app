@@ -16,7 +16,7 @@ const TodoList = () => {
         keyExtractor={item => item.id.toString()}
         extraData={todos}
         ListEmptyComponent={
-          <Text style={global.text}>Todos have not yet been added</Text>
+          <Text style={[global.text]}>Todos have not yet been added</Text>
         }
       />
     </GestureHandlerRootView>
