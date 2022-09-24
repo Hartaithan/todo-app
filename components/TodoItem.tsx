@@ -1,4 +1,3 @@
-import CheckBox from '@react-native-community/checkbox';
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import { Swipeable } from 'react-native-gesture-handler';
@@ -6,6 +5,7 @@ import { colors } from '../constants/colors';
 import useActions from '../hooks/useActions';
 import { ITodoItemProps } from '../models/todoModel';
 import { global } from '../styles/global';
+import Checkbox from './Checkbox';
 
 const TodoItem = ({ item }: ITodoItemProps) => {
   const { toggleTodoAction, deleteTodoAction } = useActions();
@@ -21,7 +21,7 @@ const TodoItem = ({ item }: ITodoItemProps) => {
   return (
     <Swipeable onSwipeableClose={() => handleDelete()}>
       <View style={[styles.item]}>
-        <CheckBox value={item.complete} onValueChange={() => handleChange()} />
+        <Checkbox value={item.complete} onChange={() => handleChange()} />
         <Text
           style={[global.text, styles.title, item.complete && styles.checked]}>
           {item.title}
