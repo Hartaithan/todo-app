@@ -5,6 +5,7 @@ import Input from './components/Input';
 import TodoList from './components/TodoList';
 import { colors } from './constants/colors';
 import useActions from './hooks/useActions';
+import { global } from './styles/global';
 
 const App = () => {
   const { addTodoAction } = useActions();
@@ -16,8 +17,8 @@ const App = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor={colors.gray[0]} />
+    <SafeAreaView style={[global.container, styles.container]}>
+      <StatusBar backgroundColor={colors.dark[9]} />
       <Header />
       <TodoList />
       <Input
@@ -32,9 +33,7 @@ const App = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 12,
-    backgroundColor: colors.gray[0],
+    paddingHorizontal: 12,
   },
 });
 
