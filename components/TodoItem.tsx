@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 import { Swipeable } from 'react-native-gesture-handler';
+import Animated from 'react-native-reanimated';
 import { colors } from '../constants/colors';
 import useActions from '../hooks/useActions';
 import { ITodoItem } from '../models/TodoModel';
@@ -24,13 +25,13 @@ const TodoItem = ({ item }: ITodoItemProps) => {
 
   return (
     <Swipeable onSwipeableClose={() => handleDelete()}>
-      <View style={[styles.item]}>
+      <Animated.View style={[styles.item]}>
         <Checkbox value={item.complete} onChange={() => handleChange()} />
         <Text
           style={[global.text, styles.title, item.complete && styles.checked]}>
           {item.title}
         </Text>
-      </View>
+      </Animated.View>
     </Swipeable>
   );
 };

@@ -1,6 +1,7 @@
-import { KeyboardType, StyleSheet, TextInput } from 'react-native';
+import { KeyboardType, TextInput } from 'react-native';
 import React from 'react';
 import { colors } from '../constants/colors';
+import { global } from '../styles/global';
 
 interface IInputProps {
   value: string;
@@ -21,7 +22,7 @@ const Input: React.FC<IInputProps> = props => {
 
   return (
     <TextInput
-      style={styles}
+      style={global.text}
       placeholder={placeholder}
       placeholderTextColor={colors.gray[6]}
       keyboardType={type}
@@ -32,7 +33,5 @@ const Input: React.FC<IInputProps> = props => {
     />
   );
 };
-
-const styles = StyleSheet.create({});
 
 export default Input;
