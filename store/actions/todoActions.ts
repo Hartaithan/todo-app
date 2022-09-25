@@ -3,7 +3,7 @@ import {
   DeleteTodoAction,
   TodoActionTypes,
   ToggleTodoAction,
-} from '../../models/todoModel';
+} from '../../models/TodoModel';
 
 export const addTodoAction = (payload: string): AddTodoAction => ({
   type: TodoActionTypes.ADD_TODO,

@@ -8,10 +8,6 @@ export interface ITodoState {
   todos: ITodoItem[];
 }
 
-export interface ITodoItemProps {
-  item: ITodoItem;
-}
-
 export enum TodoActionTypes {
   ADD_TODO = 'ADD_TODO',
   DELETE_TODO = 'DELETE_TODO',

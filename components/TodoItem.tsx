@@ -3,9 +3,13 @@ import { View, StyleSheet, Text } from 'react-native';
 import { Swipeable } from 'react-native-gesture-handler';
 import { colors } from '../constants/colors';
 import useActions from '../hooks/useActions';
-import { ITodoItemProps } from '../models/todoModel';
+import { ITodoItem } from '../models/TodoModel';
 import { global } from '../styles/global';
 import Checkbox from './Checkbox';
+
+export interface ITodoItemProps {
+  item: ITodoItem;
+}
 
 const TodoItem = ({ item }: ITodoItemProps) => {
   const { toggleTodoAction, deleteTodoAction } = useActions();

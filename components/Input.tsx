@@ -1,7 +1,14 @@
-import { StyleSheet, TextInput } from 'react-native';
+import { KeyboardType, StyleSheet, TextInput } from 'react-native';
 import React from 'react';
-import { IInputProps } from '../models/InputModel';
 import { colors } from '../constants/colors';
+
+interface IInputProps {
+  value: string;
+  onChange: (text: string) => void;
+  handleSubmit: () => void;
+  type?: KeyboardType;
+  placeholder: string;
+}
 
 const Input: React.FC<IInputProps> = props => {
   const {

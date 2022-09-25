@@ -3,7 +3,7 @@ import {
   ITodoState,
   TodoAction,
   TodoActionTypes,
-} from '../../models/todoModel';
+} from '../../models/TodoModel';
 
 const initialState: ITodoState = {
   todos: [],

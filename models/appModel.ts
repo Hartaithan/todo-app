@@ -1,4 +1,4 @@
-import { VIEWS } from './viewModel';
+import { VIEWS } from './ViewModel';
 
 export interface IAppState {
   view: VIEWS;
