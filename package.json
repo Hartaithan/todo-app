@@ -7,7 +7,12 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "doctor": "npx @react-native-community/cli doctor",
+    "reset": "react-native start --reset-cache",
+    "clean:android": "cd android && ./gradlew clean && cd ../",
+    "clean:ios": "cd ios && xcodebuild clean && cd ../",
+    "pod": "cd ios && pod install && cd ../"
   },
   "dependencies": {
     "@react-native-community/checkbox": "^0.5.12",
