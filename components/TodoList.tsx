@@ -3,6 +3,7 @@ import { FlatList, Text } from 'react-native';
 import useTypedSelector from '../hooks/useTypedSelector';
 import TodoItem from './TodoItem';
 import { global } from '../styles/global';
+import Divider from './Divider';
 
 const TodoList = () => {
   const { todos } = useTypedSelector(state => state.todo);
@@ -16,6 +17,7 @@ const TodoList = () => {
       ListEmptyComponent={
         <Text style={[global.text]}>Todos have not yet been added</Text>
       }
+      ItemSeparatorComponent={() => <Divider height={10} />}
     />
   );
 };
