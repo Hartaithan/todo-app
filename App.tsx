@@ -1,5 +1,6 @@
 import React from 'react';
 import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import Header from './components/Header';
 import Input from './components/Input';
 import TodoList from './components/TodoList';
@@ -17,17 +18,19 @@ const App = () => {
   };
 
   return (
-    <SafeAreaView style={[global.container, styles.container]}>
-      <StatusBar backgroundColor={colors.dark[9]} />
-      <Header />
-      <TodoList />
-      <Input
-        value={input}
-        onChange={text => setInput(text)}
-        handleSubmit={handleSubmit}
-        placeholder="What do you need to do?"
-      />
-    </SafeAreaView>
+    <GestureHandlerRootView style={global.container}>
+      <SafeAreaView style={[global.container, styles.container]}>
+        <StatusBar backgroundColor={colors.dark[9]} />
+        <Header />
+        <TodoList />
+        <Input
+          value={input}
+          onChange={text => setInput(text)}
+          handleSubmit={handleSubmit}
+          placeholder="What do you need to do?"
+        />
+      </SafeAreaView>
+    </GestureHandlerRootView>
   );
 };
 
