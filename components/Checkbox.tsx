@@ -1,4 +1,4 @@
-import { StyleSheet, ViewStyle } from 'react-native';
+import { Platform, StyleSheet, ViewStyle } from 'react-native';
 import React from 'react';
 import CheckBox from '@react-native-community/checkbox';
 import { colors } from '../constants/colors';
@@ -15,7 +15,7 @@ const Checkbox: React.FC<ICheckboxProps> = props => {
   const {
     value,
     onChange,
-    boxType = 'circle',
+    boxType = 'square',
     checkboxStyle,
     disabled = false,
   } = props;
@@ -30,7 +30,7 @@ const Checkbox: React.FC<ICheckboxProps> = props => {
         true: colors.gray[0],
         false: colors.gray[6],
       }}
-      tintColor={colors.gray[0]}
+      tintColor={colors.gray[6]}
       onFillColor={colors.gray[0]}
       onCheckColor={colors.dark[9]}
       onTintColor="transparent"
@@ -41,7 +41,17 @@ const Checkbox: React.FC<ICheckboxProps> = props => {
 };
 
 const styles = StyleSheet.create({
-  checkbox: {},
+  checkbox: {
+    marginRight: 8,
+    ...Platform.select({
+      ios: {
+        transform: [{ scale: 0.8 }, { translateY: 2 }],
+      },
+      default: {
+        transform: [{ scale: 1.3 }, { translateY: 0 }],
+      },
+    }),
+  },
 });
 
 export default Checkbox;

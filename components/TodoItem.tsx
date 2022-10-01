@@ -13,7 +13,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import { colors } from '../constants/colors';
 import useActions from '../hooks/useActions';
-import { ITodoItem } from '../models/TodoModel';
+import { ITodoItem } from '../models/todoModel';
 import { global } from '../styles/global';
 import Checkbox from './Checkbox';
 
@@ -89,7 +89,8 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     backgroundColor: colors.dark[5],
     borderRadius: 8,
-    padding: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 16,
   },
   title: {
     color: colors.gray[0],
