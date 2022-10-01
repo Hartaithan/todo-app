@@ -1,5 +1,5 @@
-import { AppAction, AppActionTypes, IAppState } from '../../models/AppModel';
-import { VIEWS } from '../../models/ViewModel';
+import { AppAction, AppActionTypes, IAppState } from '../../models/appModel';
+import { VIEWS } from '../../models/viewModel';
 
 const initialState: IAppState = {
   view: VIEWS.list,
