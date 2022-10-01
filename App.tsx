@@ -44,10 +44,9 @@ const App = () => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 12,
     ...Platform.select({
       ios: {
-        paddingBottom: 12,
+        paddingBottom: 16,
       },
       default: {
         paddingBottom: 0,

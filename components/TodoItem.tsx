@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.dark[5],
     borderRadius: 8,
     paddingVertical: 10,
-    paddingHorizontal: 16,
+    paddingHorizontal: 12,
   },
   title: {
     color: colors.gray[0],

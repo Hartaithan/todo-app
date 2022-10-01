@@ -1,4 +1,4 @@
-import { KeyboardType, TextInput } from 'react-native';
+import { KeyboardType, StyleSheet, TextInput, View } from 'react-native';
 import React from 'react';
 import { colors } from '../constants/colors';
 import { global } from '../styles/global';
@@ -21,17 +21,25 @@ const Input: React.FC<IInputProps> = props => {
   } = props;
 
   return (
-    <TextInput
-      style={global.text}
-      placeholder={placeholder}
-      placeholderTextColor={colors.gray[6]}
-      keyboardType={type}
-      value={value}
-      onChangeText={text => onChange(text)}
-      onSubmitEditing={handleSubmit}
-      selectionColor={colors.gray[0]}
-    />
+    <View style={styles.input}>
+      <TextInput
+        style={global.text}
+        placeholder={placeholder}
+        placeholderTextColor={colors.gray[6]}
+        keyboardType={type}
+        value={value}
+        onChangeText={text => onChange(text)}
+        onSubmitEditing={handleSubmit}
+        selectionColor={colors.gray[0]}
+      />
+    </View>
   );
 };
+
+const styles = StyleSheet.create({
+  input: {
+    paddingHorizontal: 12,
+  },
+});
 
 export default Input;
