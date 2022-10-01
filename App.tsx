@@ -1,5 +1,11 @@
 import React from 'react';
-import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
+import {
+  Platform,
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  View,
+} from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import Header from './components/Header';
 import Input from './components/Input';
@@ -19,16 +25,18 @@ const App = () => {
 
   return (
     <GestureHandlerRootView style={global.container}>
-      <SafeAreaView style={[global.container, styles.container]}>
+      <SafeAreaView style={global.container}>
         <StatusBar backgroundColor={colors.dark[9]} />
-        <Header />
-        <TodoList />
-        <Input
-          value={input}
-          onChange={text => setInput(text)}
-          handleSubmit={handleSubmit}
-          placeholder="What do you need to do?"
-        />
+        <View style={[global.container, styles.container]}>
+          <Header />
+          <TodoList />
+          <Input
+            value={input}
+            onChange={text => setInput(text)}
+            handleSubmit={handleSubmit}
+            placeholder="What do you need to do?"
+          />
+        </View>
       </SafeAreaView>
     </GestureHandlerRootView>
   );
@@ -37,6 +45,14 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 12,
+    ...Platform.select({
+      ios: {
+        paddingBottom: 12,
+      },
+      default: {
+        paddingBottom: 0,
+      },
+    }),
   },
 });
 
