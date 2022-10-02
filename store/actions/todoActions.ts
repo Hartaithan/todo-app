@@ -1,6 +1,8 @@
 import {
   AddTodoAction,
   DeleteTodoAction,
+  ITodoItem,
+  SetTodosAction,
   TodoActionTypes,
   ToggleTodoAction,
 } from '../../models/todoModel';
@@ -17,5 +19,10 @@ export const deleteTodoAction = (payload: number): DeleteTodoAction => ({
 
 export const toggleTodoAction = (payload: number): ToggleTodoAction => ({
   type: TodoActionTypes.TOGGLE_TODO,
+  payload,
+});
+
+export const setTodoAction = (payload: ITodoItem[]): SetTodosAction => ({
+  type: TodoActionTypes.SET_TODOS,
   payload,
 });

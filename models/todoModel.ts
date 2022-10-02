@@ -9,9 +9,10 @@ export interface ITodoState {
 }
 
 export enum TodoActionTypes {
-  ADD_TODO = 'ADD_TODO',
-  DELETE_TODO = 'DELETE_TODO',
-  TOGGLE_TODO = 'TOGGLE_TODO',
+  ADD_TODO = 'AddTodoAction',
+  DELETE_TODO = 'DeleteTodoAction',
+  TOGGLE_TODO = 'ToggleTodoAction',
+  SET_TODOS = 'SetTodosAction',
 }
 
 export interface AddTodoAction {
@@ -29,4 +30,13 @@ export interface ToggleTodoAction {
   payload: number;
 }
 
-export type TodoAction = AddTodoAction | DeleteTodoAction | ToggleTodoAction;
+export interface SetTodosAction {
+  type: TodoActionTypes.SET_TODOS;
+  payload: ITodoItem[];
+}
+
+export type TodoAction =
+  | AddTodoAction
+  | DeleteTodoAction
+  | ToggleTodoAction
+  | SetTodosAction;

@@ -26,6 +26,8 @@ const todoReducer = (state = initialState, action: TodoAction): ITodoState => {
         console.error('todoReducer: todo not found');
       }
       return { ...state };
+    case TodoActionTypes.SET_TODOS:
+      return { ...state, todos: action.payload };
     default:
       return state;
   }
