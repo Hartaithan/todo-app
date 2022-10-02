@@ -22,7 +22,7 @@ export const toggleTodoAction = (payload: number): ToggleTodoAction => ({
   payload,
 });
 
-export const setTodoAction = (payload: ITodoItem[]): SetTodosAction => ({
+export const setTodosAction = (payload: ITodoItem[]): SetTodosAction => ({
   type: TodoActionTypes.SET_TODOS,
   payload,
 });

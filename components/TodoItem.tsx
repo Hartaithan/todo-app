@@ -29,9 +29,8 @@ const TodoItem: React.FC<ITodoItemProps> = props => {
   const { item } = props;
   const { toggleTodoAction, deleteTodoAction } = useActions();
   const x = useSharedValue(0);
-  const height = useSharedValue(ITEM_HEIGHT);
   const margin = useSharedValue(10);
-  const opacity = useSharedValue(1);
+  const opacityAndScale = useSharedValue(1);
 
   const handleChange = () => {
     toggleTodoAction(item.id);
@@ -50,9 +49,8 @@ const TodoItem: React.FC<ITodoItemProps> = props => {
         const shouldBeDismissed = x.value < TRANSLATE_X_THRESHOLD;
         if (shouldBeDismissed) {
           x.value = withTiming(-SCREEN_WIDTH);
-          height.value = withTiming(0);
           margin.value = withTiming(0);
-          opacity.value = withTiming(0, undefined, isFinished => {
+          opacityAndScale.value = withTiming(0, undefined, isFinished => {
             if (isFinished) {
               runOnJS(handleDelete)();
             }
@@ -64,9 +62,8 @@ const TodoItem: React.FC<ITodoItemProps> = props => {
     });
 
   const animatedStyles = useAnimatedStyle(() => ({
-    transform: [{ translateX: x.value }],
-    height: height.value,
-    opacity: opacity.value,
+    transform: [{ translateX: x.value }, { scaleY: opacityAndScale.value }],
+    opacity: opacityAndScale.value,
   }));
 
   return (
