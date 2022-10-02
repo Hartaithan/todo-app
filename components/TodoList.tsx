@@ -5,7 +5,7 @@ import TodoItem from './TodoItem';
 import { global } from '../styles/global';
 import Divider from './Divider';
 
-const TodoList = () => {
+const TodoList: React.FC = () => {
   const { todos } = useTypedSelector(state => state.todo);
   return (
     <FlatList

@@ -25,7 +25,8 @@ const ITEM_HEIGHT = 50;
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const TRANSLATE_X_THRESHOLD = -SCREEN_WIDTH * 0.3;
 
-const TodoItem = ({ item }: ITodoItemProps) => {
+const TodoItem: React.FC<ITodoItemProps> = props => {
+  const { item } = props;
   const { toggleTodoAction, deleteTodoAction } = useActions();
   const x = useSharedValue(0);
   const height = useSharedValue(ITEM_HEIGHT);

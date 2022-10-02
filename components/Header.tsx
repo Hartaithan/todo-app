@@ -4,7 +4,7 @@ import useTypedSelector from '../hooks/useTypedSelector';
 import { global } from '../styles/global';
 import { colors } from '../constants/colors';
 
-const Header = () => {
+const Header: React.FC = () => {
   const { todos } = useTypedSelector(state => state.todo);
   return (
     <View style={styles.header}>
